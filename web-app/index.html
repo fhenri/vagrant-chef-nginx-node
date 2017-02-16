@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 2</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/playlist.css">
+    <meta name="viewport" content="initial-scale=1.0">
+  </head>
+  <body>
+    <div class="modal-container">
+      <div id="modal">
+        <div class="modal__items">
+          <a href="#" class="modal__close glyphicon glyphicon-remove" onclick="modalClose();"></a>
+          <p class="choose-playlist-heading">Choose Playlist</p>
+        </div>
+      </div>
+    </div>
+    <div class="add-playlist-container">
+      <form method="post" id="add-playlist-form">
+        <div class="form-group">
+          <label for="playlist-name">Playlist name:</label>
+          <input type="text" class="form-control" id="playlist-name">
+        </div>
+        <button type="submit" class="btn btn-default" id="submit-playlist">Add</button>
+      </form>
+    </div>
+    <div class="container-fluid app-wrapper">
+      <nav class="row">
+        <ul class="nav nav-tabs">
+          <li class="tab-switch col-xs-4"><a href="/library" id="tab-switch--songs"><p><span class="glyphicon glyphicon1 glyphicon-music"></span></p><p class="topLabel">Library</p></a></li>
+          <li class="tab-switch tab-switch--active col-xs-4"><a href="/playlists" id="tab-switch--playlists"><p><span class="glyphicon glyphicon2 glyphicon-list" ></span></p><p>Playlists</p></a></li>
+          <li class="tab-switch col-xs-4"><a href="/search" id="tab-switch--search"><p><span class="glyphicon glyphicon1 glyphicon-search" ></span></p><p>Search</p></a></li>
+        </ul>
+      </nav>
+      <div class="main-container row">
+        <div class="main-container__tabs">
+          <section class="main-container__tab" id="songs-container">
+            <h2>Library</h2>
+            <div class="sort-buttons">
+              <button type="button" class="btn btn-info" id="sort-by-title" onclick="sortBy('song-title');">Sort by title</button>
+              <button type="button" class="btn btn-info sort-button--active" id="sort-by-artist" onclick="sortBy('song-artist');">Sort by artist</button>
+            </div>
+            <ul id="songs-container-ul">
+            </ul>
+          </section>
+          <section class="main-container__tab main-container__tab--active" id="playlists-container">
+            <h2>Playlists</h2>
+            <div class="container-fluid">
+              <button type="button" class="btn btn-info btn-block" id="add-playlist-button"><span class="glyphicon glyphicon-plus"></span><span>Playlist</span></button>
+            </div>
+            <ul id="playlists-container-ul">
+            </ul>
+          </section>
+          <section class="main-container__tab" id="search-container">
+            <h2>Search</h2>
+            <div class="form-group">
+              <input type="text" class="form-control" id="search-input" placeholder="Search" onkeyup="search();">
+            </div>
+            <ul id="search-container-ul">
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/music-app.js">
+
+    </script>
+  </body>
+</html>

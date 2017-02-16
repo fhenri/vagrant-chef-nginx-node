@@ -1,0 +1,240 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Raleway', sans-serif !important;
+  position: relative;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+section > h2 {
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+}
+.modal-container, .add-playlist-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.4);
+  padding-top: 65px;
+  z-index: 3;
+  display: none;
+}
+/* Add to playlist modal */
+#modal, #add-playlist-form {
+  padding: 6rem;
+}
+#add-playlist-form {
+  background-color: rgb(207, 197, 222);
+}
+#submit-playlist {
+  color: white;
+}
+.modal__items {
+  background-color: rgb(207, 197, 222);
+  padding: 1rem;
+  position: relative;
+}
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  text-decoration: none;
+}
+.modal__close:hover {
+  text-decoration: none;
+}
+.modal__item {
+  color: #401F7C;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.modal-playlist-title {
+  margin-bottom: 2rem;
+  color: rgb(131, 87, 151);
+  cursor: pointer;
+  padding-left: 1rem;
+}
+.choose-playlist-heading {
+  margin-bottom: 3rem;
+  color: grey;
+  text-indent: 2rem;
+  font-weight: bold;
+}
+/* Nav tabs styles */
+.nav-tabs {
+  text-align: center;
+}
+.tab-switch {
+  margin: 0 !important;
+  background-color: white;
+  padding: 0 !important;
+}
+.tab-switch > a {
+  color: grey !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+.tab-switch .glyphicon {
+  color: black !important;
+  font-size: 2rem !important;
+}
+.tab-switch--active {
+  background-color: #9467c9;
+}
+.tab-switch.tab-switch--active > a {
+  color: white !important;
+  font-weight: bold;
+  background-color: transparent !important;
+}
+.tab-switch.tab-switch--active > a .glyphicon {
+  color: white !important;
+}
+.tab-switch > a > p {
+  margin: 0 !important;
+}
+
+.sort-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.sort-button--active {
+  box-shadow: inset 0 2px 2px 3px rgba(0,0,0,.5), inset 0 -2px 2px 3px rgba(0,0,0,.5) !important;
+}
+.btn {
+  background-color: #9467c9;
+  border: none;
+  border-radius: 5px !important;
+}
+.btn > .glyphicon {
+  color: white !important;
+  margin-right: .5rem;
+}
+.btn:hover {
+  background-color:#9467c9;
+}
+.btn:active {
+  background-color: #9467c9 !important;
+  outline: 0 !important;
+}
+.btn:focus {
+  background-color: #9467c9 !important;
+  outline: 0 !important;
+}
+/* App tabs - songs, playlists, search tab */
+.main-container {
+  padding: 1rem 1rem 0 1rem;
+  margin-top: 61px;
+  position: relative;
+  background-color: #e8e0f5;
+}
+.main-container__tab {
+  display: none;
+}
+.main-container__tab--active {
+  display: block;
+}
+.song-item {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  .song-item {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    white-space: pre;
+  }
+  .song-cover, .playlist-cover {
+    min-width: 10% !important;
+    width: 10% !important;
+    padding-bottom: 10% !important;
+    height: 0 !important;
+  }
+  .song-meta {
+    display: inline-block;
+    float: left;
+    width: 77% !important;
+    padding-left: .5rem;
+  }
+  .song-title, .song-artist {
+    text-align: left !important;
+  }
+  .song-actions {
+    float: right;
+    width: 10%;
+  }
+}
+.song-cover, .playlist-cover {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.2);
+  float: left;
+}
+.song-actions {
+  min-width: 40px;
+}
+.song-actions > .glyphicon {
+  cursor: pointer;
+}
+.song-title, .song-artist {
+  text-overflow: ellipsis;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+.glyphicon {
+  color: #7f7f7f !important;
+}
+.glyphicon-chevron-right {
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+.glyphicon-play {
+  margin-right: 10px;
+}
+.song-title, .playlist-title {
+  color: #9467c9;
+}
+.playlist-item {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.playlist-title {
+  display: flex;
+  justify-content: space-between;
+  padding-left: .5rem;
+}
+.playlist-item__ul {
+  display: none;
+}
+.playlist-item__ul > li {
+  clear: both;
+}
+input {
+  background-color: rgba(0,0,0,.05) !important;
+  border: 1px solid grey !important;
+}
